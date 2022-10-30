@@ -1,0 +1,166 @@
+@import 'vars';
+
+body{
+    font-family: Proxima Nova, sans serif;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://tinder.com/static/build/5921afb1c3e6673d31a79697175df491.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    &:after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(6px);
+    }
+}
+
+
+h1, h2, h3{
+    font-family: Proxima Nova Bold;
+}
+
+#phone{
+    background:#1b1b1b;
+    border-radius: 25px;
+    padding:.7rem .6rem;
+    box-shadow: 2px 4px 12px 0px rgba(255,255,255,.1);
+    overflow: hidden;
+    #screen{
+        width:480px;
+        height:850px;
+        border-radius:12px;
+        background: #2b2b2b;
+        position:relative;
+        display:flex;
+        justify-content: center;
+        box-sizing: border-box;   
+        padding-top: 1.5rem;
+        &:after{
+            position: absolute;
+            content:"";
+            background: #1b1b1b;
+            width:12px;
+            height:12px;
+            text-align: center;
+            top:.5rem;
+            border-radius: 100%;
+        }
+        
+        .login{
+            width:100%;
+            height:100%;
+            padding:2rem 4rem;
+            text-align: center;
+            color:white;
+            display:flex;
+            background: linear-gradient(25deg, $primary_color 0%, $secondary_color 100%);
+            border-bottom-left-radius:12px;
+            border-bottom-right-radius:12px;
+            box-sizing: border-box;   
+            flex-flow: column;
+            .logo{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex:1 1 auto;
+                max-width:100%;
+                img{
+                    width:60px;
+                    margin-right:.3rem;
+                }
+                h1{
+                    font-size: 3.5rem;
+                    letter-spacing: -3px;
+                    font-weight: 300;
+                }
+            }
+            a{
+                color: white;
+                text-decoration:none;
+                font-weight:600;
+            }
+            span{
+                font-size: .9rem;
+            }
+            .login-section{
+                flex:0 0 auto;
+                max-width: 100%;
+                height:fit-content;
+                .buttons{
+                    padding-top:1rem;
+                    padding-bottom:1.4rem;
+                    .login-button{
+                        width:100%;
+                        background: white;
+                        height: 50px;
+                        font-size: .9rem;
+                        color: $black;
+                        text-transform: uppercase;
+                        font-family: Proxima Nova Bold;
+                        margin-bottom:1rem;
+                        border-radius: 50px;
+                        color: $black-secondary;
+                        border:none;
+                        box-shadow:2px 2px 8px 0px rgba(0,0,0,.2);
+                        transition: box-shadow 0.3s;
+                        position: relative;
+                        &:hover{
+                            cursor:pointer;
+                            box-shadow:2px 2px 8px 1px rgba(0,0,0,.4);
+                            transition: box-shadow 0.3s;
+                        }
+                    }
+                    .google{
+                        &:after{
+                            content: url(../images/google.svg);
+                            width:18px;
+                            display:flex;
+                            position:absolute;
+                            top:0;
+                            bottom:0;
+                            left:1.2rem;
+                        }
+                    }
+                    .facebook{
+                        &:after{
+                            content: url(../images/facebook.svg);
+                            width:21px;
+                            display:flex;
+                            position:absolute;
+                            top:0;
+                            bottom:0;
+                            left:1.2rem;
+                        }
+                    }
+                    .email{
+                        &:after{
+                            content: url(../images/mail.svg);
+                            width:18px;
+                            display:flex;
+                            position:absolute;
+                            top:0;
+                            bottom:0;
+                            left:1.2rem;
+                            color: $black;
+                        }
+                    }
+                }
+                .login-trouble{
+                    font-family: Proxima Nova;
+                }
+            }
+        }
+    }
+}
+
+
