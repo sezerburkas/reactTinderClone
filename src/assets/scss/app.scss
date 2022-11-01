@@ -33,7 +33,7 @@ h1, h2, h3{
     background:#1b1b1b;
     border-radius: 25px;
     padding:.7rem .6rem;
-    box-shadow: 2px 4px 12px 0px rgba(255,255,255,.1);
+    box-shadow: inset 0px 0px 8px -1px rgba(255, 255, 255, 0.1);
     overflow: hidden;
     #screen{
         width:480px;
@@ -114,6 +114,11 @@ h1, h2, h3{
                         box-shadow:2px 2px 8px 0px rgba(0,0,0,.2);
                         transition: box-shadow 0.3s;
                         position: relative;
+                        display: block;
+                        text-align: center;
+                        line-height: 3rem;
+                        font-family: Proxima Nova;
+                        font-weight: 500;
                         &:hover{
                             cursor:pointer;
                             box-shadow:2px 2px 8px 1px rgba(0,0,0,.4);
@@ -160,7 +165,339 @@ h1, h2, h3{
                 }
             }
         }
+
+        .plane{
+            color: $black-dark;
+            background-color: $white;
+            padding:2.2rem 3rem;
+            width:100%;
+            height:100%;
+            h1{
+                font-family: Proxima Nova;
+                margin-bottom:2rem;
+            }
+            span{
+                display: block;
+                margin-top:2rem;
+                margin-bottom: 2rem;
+                font-size: .8rem;
+                font-weight: 300;
+                color: $black;
+            }
+        }
+
+        .plane-app{
+            color: $black-dark;
+            background-color: $white;
+            width:100%;
+            height:100%;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            header{
+                width:100%;
+                padding:.8rem;
+                padding-bottom:0;
+                .logo{
+                    height:100%;
+                    img{
+                        height:32px;
+                        margin-right:.2rem;
+                    }
+                    span{
+                        font-size:2rem;
+                        color: $primary-color-2;
+                        font-family: Proxima Nova Bold;
+                        font-weight: 300;
+                        letter-spacing: -2px;
+                    }
+                }
+            }
+            footer{
+                width:100%;
+                height:55px;
+                background: $white;
+                position:absolute;
+                padding-bottom:.3rem;
+                box-sizing: border-box;
+                bottom:0;
+                left:0;
+                border-bottom-right-radius: 12px;
+                border-bottom-left-radius: 12px;
+                overflow: hidden;
+                nav{
+                    width:100%;
+                    height:100%;
+                    display: flex;
+                    justify-content: center;
+                    .nav-item{
+                        flex:0 0 auto;
+                        width:20%;
+                        display: flex;
+                        height:100%;
+                        justify-content: center;
+                        align-items: center;
+                        font-size:1.3rem;
+                        color: $black-dark;
+                    }
+                    .active{
+                        color: $primary-color-2;
+                    }
+                }
+            }
+        }
+        .card-container{
+            padding:.2rem .3rem;
+            width:100%;
+            height:710px;
+            box-sizing:border-box;
+            &:after{
+                content: "";
+                position: absolute;
+                width:100%;
+                height:50vh;
+                background: linear-gradient(0deg, rgba(0,0,0,.1) 0%, rgba(0, 0, 0, 0) 100%);
+                bottom:0;
+                left:0;
+            }
+            .card{
+                width:100%;
+                height:100%;
+                border-radius:6px;
+                overflow: hidden;
+                position: relative;
+                .arrow-buttons{
+                    position: absolute;
+                    width:100%;
+                    height:100%;
+                    top:0;
+                    left:0;
+                    z-index:99;
+                    .arrow-button{
+                        width:50%;
+                        height:68%;
+                        border: none;
+                        background: transparent;
+                        &:hover{
+                            cursor:pointer;
+                        }
+                    }
+                }
+                .card-header{
+                    position: relative;
+                    img{
+                        width:100%;
+                    }
+                    .photo-count{
+                        position: absolute;
+                        top:.5rem;
+                        padding:0rem .5rem;
+                        box-sizing: border-box;
+                        width:100%;
+                        height:3px;
+                        display:flex;
+                        flex-wrap: wrap;
+                        .photo-selector{
+                            flex:0 0 auto;
+                            display: block;
+                            background:rgba(0,0,0,0.2);
+                            backdrop-filter: blur(4px);
+                            margin-right:3px;
+                            border-radius: 12px;
+                            transition:all 0.1s;
+                            &:hover{
+                                cursor:pointer;
+                                background: white;
+                                transition:all 0.1s;
+                            }
+                        }
+                        .active{
+                            background: white;
+                            transition:all 0.1s;
+                        }
+                    }
+                }
+                .card-description{
+                    color:white;
+                    position: absolute;
+                    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0) 100%);
+                    box-sizing: border-box;
+                    bottom: 0;
+                    z-index: 999;
+                    width:100%;
+                    display: flex;
+                    flex-wrap:wrap;
+                    justify-content: center;
+                    padding:.6rem 1rem;
+                    div{
+                        flex: 1 1 auto;
+                        width:100%;
+                    }
+                    span{
+                        width:100%;
+                        padding:.3rem;
+                        display: flex;
+                        padding-left:1.3rem;
+                        position: relative;
+                        align-items: center;
+                        box-sizing: border-box;
+                    }
+                    .activity{
+                        &:after{
+                            content:"";
+                            position: absolute;
+                            width:12px;
+                            height:12px;
+                            background-color: rgb(1, 218, 1);
+                            box-shadow: inset 0px 0px 8px 0px rgba(0, 0, 0, .4);
+                            border-radius: 100%;
+                            left:-.05rem;
+                        }
+                    }
+                    .location{
+                        svg{
+                            position: absolute;
+                            left:0;
+
+                        }
+                    }
+                    .name{
+                        h1{
+                            font-size:2.3rem;
+                            font-weight: 300;
+                            text-shadow: 1px 1px 3px rgba(0,0,0,1);
+                            small{
+                                font-size: 1.5rem;
+                                font-family: Proxima Nova;
+                            }
+                        }
+                    }
+                    .card-buttons{
+                        padding-top:1.5rem;
+                        display:flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        button{
+                            background: transparent;
+                            border-radius: 100%;
+                            color: white;
+                            font-size:2rem;
+                            width:55px;
+                            height:55px;
+                            transition: all 0.5s;
+                            &:hover{
+                                cursor:pointer;
+                                transition: all 0.5s;
+                            }
+                        }
+                        .small{
+                            width: 42px;
+                            height: 42px;
+                        }
+                        .revert{
+                            font-size:1.1rem;
+                            border: .12rem solid white;
+                            &:hover{
+                                background-color:white;
+                                color: $black-dark;
+                            }
+                        }
+                        .nope{
+                            border: .12rem solid $primary-color-2;
+                            color: $primary-color-2;
+                            &:hover{
+                                background-color:$primary-color-2;
+                                color: #eee;
+                            }
+                        }
+                        .super-star{
+                            font-size:1.5rem;
+                            border: .12rem solid #3AB5FB;
+                            color: #3ab4fb;
+                            &:hover{
+                                background-color:#3AB5FB;
+                                color: #eee;
+                            }
+                        }
+                        .yes{
+                            font-size:1.8rem;
+                            border: .12rem solid #1FE9B9;
+                            color: #1FE9B9;
+                            transition: all 0.5s;
+                            &:hover{
+                                background-color:#17b490;
+                                color: #eee;
+                            }
+                        }
+                        .boost{
+                            font-size:1.3rem;
+                            border: .12rem solid #B145F0;
+                            color: #B145F0;
+                            &:hover{
+                                background-color:#B145F0;
+                                color: #eee;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .form-control{
+            input{
+                width:100%;
+                border:none;
+                border-bottom:.15rem solid $black;
+                height:35px;
+                background:none;
+                font-size:1.1rem;
+                transition: border-bottom 0.3s;
+                &:focus{
+                    outline:none;
+                    border:none;
+                    border-bottom:.15rem solid $primary-color-2;
+                    transition: border-bottom 0.3s;
+                }
+
+            }
+        }
+        .btn{
+            border-radius: 50px;
+            padding: .5rem 1rem;
+            width:100%;
+            height: 45px;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            color: $black-dark;
+            border:none;
+            background-color: $gray;
+            font-family: Proxima Nova;
+            box-shadow: 0px 0px 8px 0px rgba(0,0,0,0);
+            transition: box-shadow 0.3s;
+            &:hover{
+                cursor: pointer;
+                box-shadow: 2px 2px 8px 0px rgba(0,0,0,.3);
+                transition: box-shadow 0.3s;
+            }
+        }
     }
+    .back-button{
+        position: absolute;
+        top:2.5rem;
+        left: 1rem;
+        .back{
+            background: transparent;
+            border: none;
+            &:hover{
+                cursor: pointer;
+            }
+            font-size:1.3rem;
+            color: $black-dark;
+        }
+    }
+  
 }
 
 
